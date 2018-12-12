@@ -4,6 +4,16 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 
 TODO: Delete this and the text above, and describe your gem
 
+A command line interface for the tv show Rick and Morty.
+
+User can search through a list of all characters that appear in all episodes of Rick and Morty.
+Character information will be available such as name and which episodes they appeared in following the prompts
+list all episodes
+list all characters
+list character info
+list character cameo
+
+
 ## Installation
 
 Add this line to your application's Gemfile:
