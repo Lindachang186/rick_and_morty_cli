@@ -2,8 +2,6 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rick_and_morty_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
-
 A command line interface for the tv show Rick and Morty.
 
 User can search through a list of all characters that appear in all episodes of Rick and Morty.
