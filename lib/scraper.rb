@@ -4,7 +4,7 @@ require "nokogiri"
 class Scraper
 
   def get_page
-      Nokogiri::HTML(open("https://rickandmortyapi.com/"))
+      new = Nokogiri::HTML(open("https://rickandmortyapi.com/"))
     end
 
 
