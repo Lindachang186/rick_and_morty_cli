@@ -1,12 +1,14 @@
 require "pry"
 require "nokogiri"
 
-class Scraper
+class RickAndMortyCli::Scraper
 
   def get_page
-      new = Nokogiri::HTML(open("https://rickandmortyapi.com/"))
-      binding.pry
-    end
+    Nokogiri::HTML(open("https://rickandmortyapi.com/"))
+    puts "hi"
+  end
+
+
 
 
 end
