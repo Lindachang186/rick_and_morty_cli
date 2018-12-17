@@ -1,2 +1,5 @@
 #!/usr/bin/env ruby
 
+require '../lib/rick_and_morty_cli'
+
+RickAndMortyCli::CLI::new.call
