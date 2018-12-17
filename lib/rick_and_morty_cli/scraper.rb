@@ -3,11 +3,13 @@ require "pry"
 class RickAndMortyCli::Scraper
 
   def get_page
-    Nokogiri::HTML(open("https://rickandmortyapi.com/"))
+    doc = Nokogiri::HTML(open("https://rickandmortyapi.com/api/character/"))
     binding.pry
   end
 
-
+  def get_character
+    self.get_page.css("p")
+  end
 
 
 end
