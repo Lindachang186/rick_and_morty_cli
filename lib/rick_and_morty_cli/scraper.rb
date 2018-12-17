@@ -1,5 +1,4 @@
 require "pry"
-require "nokogiri"
 
 class RickAndMortyCli::Scraper
 
