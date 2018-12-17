@@ -8,7 +8,7 @@ class RickAndMortyCli::Scraper
   end
 
   def get_character
-    self.get_page.css("p")
+    self.get_page.css("p").children
   end
 
 
