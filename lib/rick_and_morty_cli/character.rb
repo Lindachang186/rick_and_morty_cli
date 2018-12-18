@@ -11,6 +11,13 @@ class RickAndMortyCli::Character
     @status = status
     @species = species
     @episode = episode
+    @@all << self 
   end
+
+  def self.all
+    @@all
+  end
+
+
 
 end
