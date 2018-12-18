@@ -5,13 +5,13 @@ class RickAndMortyCli::Character
 
   @@all = []
 
-  def initialize(name=nil)
-    @id = id
-    @name = name
-    @status = status
-    @species = species
-    @episode = episode
-    @@all << self 
+  def initialize(hash = {})
+    @id = hash["id"]
+    @name = hash["name"]
+    @status = hash["status"]
+    @species = hash["species"]
+    @episode = hash["episode"]
+    @@all << self
   end
 
   def self.all
