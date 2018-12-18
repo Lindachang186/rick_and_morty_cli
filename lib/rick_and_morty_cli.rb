@@ -6,3 +6,4 @@ require "rick_and_morty_cli/character"
 
 require "pry"
 require "nokogiri"
+require "open-uri"
