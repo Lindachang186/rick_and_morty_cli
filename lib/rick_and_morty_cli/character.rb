@@ -1,3 +1,4 @@
+require "pry"
 
 class RickAndMortyCli::Character
 
@@ -18,14 +19,23 @@ class RickAndMortyCli::Character
     @@all
   end
 
-  def self.find_by_name
+  def self.find_by_name(name)
     @@all.find do |character|
       if name == character.name
         puts character.name
-        puts character.id
         puts character.species
         puts character.status
         puts character.episodes
+      end
+    end
+  end
+
+  def self.find_random
+    @@all.find do |character|
+      x = @@all.length
+      number = rand(1...493)
+      if character.id == number
+        character.name
       end
     end
   end

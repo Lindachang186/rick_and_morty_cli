@@ -9,6 +9,7 @@ require "rick_and_morty_cli"
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
 # Pry.start
-
 require "irb"
+RickAndMortyCli::Api.new.get_characters_from_page
+RickAndMortyCli::Character.find_random
 IRB.start(__FILE__)
