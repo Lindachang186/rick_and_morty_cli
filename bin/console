@@ -10,6 +10,4 @@ require "rick_and_morty_cli"
 # require "pry"
 # Pry.start
 require "irb"
-RickAndMortyCli::Api.new.get_characters_from_page
-RickAndMortyCli::Character.find_random
 IRB.start(__FILE__)

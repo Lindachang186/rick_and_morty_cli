@@ -1,4 +1,3 @@
-require "pry"
 
 class RickAndMortyCli::Character
 
@@ -38,6 +37,7 @@ class RickAndMortyCli::Character
         character.name
       end
     end
+    binding.pry
   end
 
 end

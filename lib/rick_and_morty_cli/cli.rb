@@ -5,9 +5,13 @@ class RickAndMortyCli::Cli
   def call
      RickAndMortyCli::Api.new.get_characters
      puts "Welcome to the Rick And Morty Character Finder"
+     start
+   end
+
+   def start
      puts "Please choose from the following menu"
-     puts "1. Find character by name"
-     puts "2. Find me a random character"
+     puts "1. Find character by name -- enter 1"
+     puts "2. Find me a random character -- enter 2"
 
      input = gets.strip
       if input == 1
@@ -15,6 +19,21 @@ class RickAndMortyCli::Cli
       elsif input == 2
         random
       end
+
+      puts ""
+    puts "Would you like to see another restaurant? Enter Y or N"
+
+    input = gets.strip.downcase
+    if input == "y"
+      start
+    elsif input == "n"
+      puts "Thank you! Have a great day!"
+      exit
+    else
+      puts "I don't understand that answer."
+      start
+    end
+
   end
 
   def character_finder
