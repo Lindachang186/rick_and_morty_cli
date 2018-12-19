@@ -21,13 +21,14 @@ class RickAndMortyCli::Character
   def self.find_by_name(name)
     @@all.find do |character|
       if name == character.name
-        puts character.name
-        puts character.species
-        puts character.status
-        puts character.episodes
+        a = character
       end
     end
+    puts "Name: #{a.name}"
+    puts "Species: #{a.species}"
+    puts "Status: #{a.status}"
   end
+
 
   def self.find_random
     @@all.find do |character|
@@ -37,7 +38,6 @@ class RickAndMortyCli::Character
         character.name
       end
     end
-    binding.pry
   end
 
 end

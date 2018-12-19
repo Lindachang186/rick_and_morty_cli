@@ -1,9 +1,8 @@
 #My CLI Controller
-
 class RickAndMortyCli::Cli
 
   def call
-     RickAndMortyCli::Api.new.get_characters
+     RickAndMortyCli::Api.new.get_characters_from_page
      puts "Welcome to the Rick And Morty Character Finder"
      start
    end
@@ -13,15 +12,15 @@ class RickAndMortyCli::Cli
      puts "1. Find character by name -- enter 1"
      puts "2. Find me a random character -- enter 2"
 
-     input = gets.strip
+     input = gets.strip.to_i
       if input == 1
         character_finder
       elsif input == 2
-        random
+        random_character
       end
 
-      puts ""
-    puts "Would you like to see another restaurant? Enter Y or N"
+    puts ""
+    puts "Would you like to find another character? Enter Y or N"
 
     input = gets.strip.downcase
     if input == "y"
@@ -50,9 +49,10 @@ class RickAndMortyCli::Cli
 
   end
 
-  def random
+  def random_character
     RickAndMortyCli::Character.find_random
   end
+
 
 
 end
