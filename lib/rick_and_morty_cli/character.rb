@@ -21,12 +21,12 @@ class RickAndMortyCli::Character
   def self.find_by_name(name)
     @@all.find do |character|
       if name == character.name
-        a = character
+        puts "Name: #{character.name}"
+        puts "Species: #{character.species}"
+        puts "Status: #{character.status}"
+        puts "Id: #{character.id}"
       end
     end
-    puts "Name: #{a.name}"
-    puts "Species: #{a.species}"
-    puts "Status: #{a.status}"
   end
 
 
@@ -39,5 +39,6 @@ class RickAndMortyCli::Character
       end
     end
   end
+
 
 end
