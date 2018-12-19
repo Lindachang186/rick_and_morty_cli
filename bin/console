@@ -11,5 +11,4 @@ require "rick_and_morty_cli"
 # Pry.start
 
 require "irb"
-RickAndMortyCli::Api.new.get_characters_from_page
 IRB.start(__FILE__)
