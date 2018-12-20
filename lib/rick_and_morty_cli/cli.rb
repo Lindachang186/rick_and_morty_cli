@@ -51,6 +51,22 @@ class RickAndMortyCli::Cli
 
   def random_character
     RickAndMortyCli::Character.find_random
+    puts "Would you like to find another random character? enter Y for another or N to exit or MAIN (for main menu)"
+
+    input = gets.strip.downcase
+
+    if input == "y"
+      random_character
+    elsif input == "n"
+      puts "Thank you! Have a great day!"
+      exit
+    elsif input.downcase == "main"
+      start
+    else
+      puts "I don't understand that answer."
+      start
+    end
+
   end
 
 
