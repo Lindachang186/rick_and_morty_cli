@@ -31,13 +31,12 @@ class RickAndMortyCli::Character
 
 
   def self.find_random
-    @@all.find do |character|
       x = @@all.length
-      number = rand(1...493)
-      if character.id == number
-        character.name
-      end
-    end
+      number = rand(1...x)
+      @@all[number]
+      puts "Name: #{@@all[number].name}"
+      puts "Species: #{@@all[number].species}"
+      puts "Status: #{@@all[number].status}"
   end
 
 
