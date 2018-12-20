@@ -9,6 +9,7 @@ class RickAndMortyCli::Cli
 
    def start
      puts "Please choose from the following menu"
+     puts ""
      puts "1. Find character by name -- enter 1"
      puts "2. Find me a random character -- enter 2"
 
@@ -51,7 +52,9 @@ class RickAndMortyCli::Cli
 
   def random_character
     RickAndMortyCli::Character.find_random
-    puts "Would you like to find another random character? enter Y for another or N to exit or MAIN (for main menu)"
+    puts ""
+    puts "Would you like to find another random character?"
+    puts "enter Y for another or N to exit or MAIN (for main menu)"
 
     input = gets.strip.downcase
 
