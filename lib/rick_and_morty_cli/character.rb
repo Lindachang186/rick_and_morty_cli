@@ -33,10 +33,10 @@ class RickAndMortyCli::Character
   
   def details
     [
-      "Name: #{character.name}", 
-      "Species: #{character.species}",
-      "Status: #{character.status}",
-      "Id: #{character.id}"
+      "Name: #{self.name}", 
+      "Species: #{self.species}",
+      "Status: #{self.status}",
+      "Id: #{self.id}"
     ]
   end
   
