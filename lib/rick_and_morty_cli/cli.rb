@@ -41,8 +41,8 @@ class RickAndMortyCli::Cli
     puts "Which Rick And Morty character would you like to find?"
     input = gets.strip
 
-    if input.is_a?(String)
-      RickAndMortyCli::Character.find_by_name(input)
+    if character = RickAndMortyCli::Character.find_by_name(input) 
+      character
     else
       puts "I can't seem to find that character. Try again."
       character_finder
