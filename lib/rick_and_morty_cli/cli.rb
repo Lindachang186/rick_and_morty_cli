@@ -40,9 +40,12 @@ class RickAndMortyCli::Cli
 
     puts "Which Rick And Morty character would you like to find?"
     input = gets.strip
+    characters = RickAndMortyCli::Character.find_by_name(input) 
 
-    if character = RickAndMortyCli::Character.find_by_name(input) 
-      puts character.details
+    if characters.size >= 1 
+      characters.each do |character|
+        puts character.details
+      end
     else
       puts "I can't seem to find that character. Try again."
       character_finder

@@ -19,7 +19,7 @@ class RickAndMortyCli::Character
   end
 
   def self.find_by_name(name)
-    @@all.find do |character|
+    @@all.find_all do |character|
       character.name.downcase.match(name.downcase)
     end
   end
