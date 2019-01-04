@@ -20,12 +20,7 @@ class RickAndMortyCli::Character
 
   def self.find_by_name(name)
     @@all.find do |character|
-      if name == character.name
-        puts "Name: #{character.name}"
-        puts "Species: #{character.species}"
-        puts "Status: #{character.status}"
-        puts "Id: #{character.id}"
-      end
+      character.name.downcase.match(name.downcase)
     end
   end
 
@@ -34,10 +29,18 @@ class RickAndMortyCli::Character
       x = @@all.length
       number = rand(1...x)
       @@all[number]
-      puts "Name: #{@@all[number].name}"
-      puts "Species: #{@@all[number].species}"
-      puts "Status: #{@@all[number].status}"
   end
+  
+  def details
+    [
+      "Name: #{character.name}", 
+      "Species: #{character.species}",
+      "Status: #{character.status}",
+      "Id: #{character.id}"
+    ]
+  end
+  
+  
 
 
 end

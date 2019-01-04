@@ -42,7 +42,7 @@ class RickAndMortyCli::Cli
     input = gets.strip
 
     if character = RickAndMortyCli::Character.find_by_name(input) 
-      character
+      puts character.details
     else
       puts "I can't seem to find that character. Try again."
       character_finder
@@ -51,7 +51,7 @@ class RickAndMortyCli::Cli
   end
 
   def random_character
-    RickAndMortyCli::Character.find_random
+    puts RickAndMortyCli::Character.find_random.details
     puts ""
     puts "Would you like to find another random character?"
     puts "enter Y for another or N to exit or MAIN (for main menu)"
