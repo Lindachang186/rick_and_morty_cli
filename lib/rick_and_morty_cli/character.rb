@@ -1,4 +1,4 @@
-
+require "pry"
 class RickAndMortyCli::Character
 
   attr_accessor :id, :name, :status, :species, :episode
@@ -25,8 +25,8 @@ class RickAndMortyCli::Character
   end
 
   def self.print_all
-    @@all.map do |character|
-      character.name
+    @@all.each_with_index do |character, index|
+      puts "#{index + 1}. " + character.name
     end
   end
 
