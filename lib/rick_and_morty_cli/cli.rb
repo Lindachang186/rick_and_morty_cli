@@ -80,6 +80,27 @@ class RickAndMortyCli::Cli
 
     def all_characters
       puts RickAndMortyCli::Character.print_all
+      find_character_by_id
+    end
+
+    def find_character_by_id
+      puts ""
+      puts "Find out more about a character!"
+      puts "Enter their number to learn more -- enter character #"
+
+      input = gets.strip.to_i
+      finder = RickAndMortyCli::Character.find_by_id(input)
+
+        if finder.size >= 1
+          finder.each do |character|
+            puts character.details
+          end
+        end
+        
+        find_character_by_id
+      end
+
+      def restart_options
 
       puts ""
       puts "Return to Main -- enter MAIN"
