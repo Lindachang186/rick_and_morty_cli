@@ -80,6 +80,23 @@ class RickAndMortyCli::Cli
 
     def all_characters
       puts RickAndMortyCli::Character.print_all
+
+      puts ""
+      puts "Return to Main -- enter MAIN"
+      puts "Exit Program -- enter Exit"
+
+      input = gets.strip.downcase
+
+      if input.downcase == "main"
+        start
+      elsif input.downcase == "exit"
+        puts "Thank you! Have a great day!"
+        exit
+      else
+        puts "I don't understand that answer."
+        start
+      end
+
     end
 
 
