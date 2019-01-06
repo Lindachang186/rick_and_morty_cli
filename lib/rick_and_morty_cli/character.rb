@@ -25,9 +25,11 @@ class RickAndMortyCli::Character
   end
 
   def self.print_all
+    list = []
     @@all.each_with_index do |character, index|
-      puts "#{index + 1}. " + character.name
+      list << "#{index + 1}. " + character.name
     end
+    list
   end
 
 
