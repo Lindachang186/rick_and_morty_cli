@@ -21,22 +21,12 @@ class RickAndMortyCli::Cli
         random_character
       elsif input == 3
         all_characters
+      elsif input > 3
+        puts "Invalid option"
+        start
       end
 
-    puts ""
-    puts "Would you like to find another character? Enter Y or N"
-
-    input = gets.strip.downcase
-    if input == "y"
-      start
-    elsif input == "n"
-      puts "Thank you! Have a great day!"
-      exit
-    else
-      puts "I don't understand that answer."
-      start
-    end
-
+    restart_options
   end
 
   def character_finder
@@ -58,24 +48,7 @@ class RickAndMortyCli::Cli
 
   def random_character
     puts RickAndMortyCli::Character.find_random.details
-    puts ""
-    puts "Would you like to find another random character?"
-    puts "enter Y for another or N to exit or MAIN (for main menu)"
-
-    input = gets.strip.downcase
-
-    if input == "y"
-      random_character
-    elsif input == "n"
-      puts "Thank you! Have a great day!"
-      exit
-    elsif input.downcase == "main"
-      start
-    else
-      puts "I don't understand that answer."
-      start
-    end
-
+    restart_options
   end
 
     def all_characters
@@ -96,13 +69,13 @@ class RickAndMortyCli::Cli
             puts character.details
           end
         end
-        
-        find_character_by_id
+        restart_options
+
       end
 
       def restart_options
-
       puts ""
+      puts "Would you like to find another character?"
       puts "Return to Main -- enter MAIN"
       puts "Exit Program -- enter Exit"
 
