@@ -24,23 +24,29 @@ class RickAndMortyCli::Character
     end
   end
 
+  def self.print_all
+    @@all.map do |character|
+      character.name
+    end
+  end
+
 
   def self.find_random
       x = @@all.length
       number = rand(1...x)
       @@all[number]
   end
-  
+
   def details
     [
-      "Name: #{self.name}", 
+      "Name: #{self.name}",
       "Species: #{self.species}",
       "Status: #{self.status}",
       "Id: #{self.id}"
     ]
   end
-  
-  
+
+
 
 
 end

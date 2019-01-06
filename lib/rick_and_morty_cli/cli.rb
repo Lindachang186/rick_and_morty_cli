@@ -12,12 +12,15 @@ class RickAndMortyCli::Cli
      puts ""
      puts "1. Find character by name -- enter 1"
      puts "2. Find me a random character -- enter 2"
+     puts "3. List all character names -- enter 3"
 
      input = gets.strip.to_i
       if input == 1
         character_finder
       elsif input == 2
         random_character
+      elsif input == 3
+        all_characters
       end
 
     puts ""
@@ -40,9 +43,9 @@ class RickAndMortyCli::Cli
 
     puts "Which Rick And Morty character would you like to find?"
     input = gets.strip
-    characters = RickAndMortyCli::Character.find_by_name(input) 
+    characters = RickAndMortyCli::Character.find_by_name(input)
 
-    if characters.size >= 1 
+    if characters.size >= 1
       characters.each do |character|
         puts character.details
       end
@@ -74,6 +77,10 @@ class RickAndMortyCli::Cli
     end
 
   end
+
+    def all_characters
+      puts RickAndMortyCli::Character.print_all
+    end
 
 
 
