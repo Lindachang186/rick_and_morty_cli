@@ -64,7 +64,7 @@ class RickAndMortyCli::Cli
     input = gets.strip.to_i
     finder = RickAndMortyCli::Character.find_by_id(input)
 
-        if input < finder.size
+        if input < 493
           finder.each do |character|
             puts character.details
           end
