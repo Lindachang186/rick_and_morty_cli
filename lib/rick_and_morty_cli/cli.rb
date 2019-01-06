@@ -30,19 +30,19 @@ class RickAndMortyCli::Cli
   end
 
   def character_finder
-
     puts "Which Rick And Morty character would you like to find?"
+
     input = gets.strip
     characters = RickAndMortyCli::Character.find_by_name(input)
 
-    if characters.size >= 1
-      characters.each do |character|
-        puts character.details
+      if characters.size >= 1
+        characters.each do |character|
+          puts character.details
+        end
+      else
+        puts "I can't seem to find that character. Try again."
+        character_finder
       end
-    else
-      puts "I can't seem to find that character. Try again."
-      character_finder
-    end
 
   end
 
@@ -51,35 +51,36 @@ class RickAndMortyCli::Cli
     restart_options
   end
 
-    def all_characters
+  def all_characters
       puts RickAndMortyCli::Character.print_all
       find_character_by_id
-    end
+  end
 
-    def find_character_by_id
-      puts ""
-      puts "Find out more about a character!"
-      puts "Enter their number to learn more -- enter character #"
+  def find_character_by_id
+    puts ""
+    puts "Find out more about a character!"
+    puts "Enter their number to learn more -- enter character #"
 
-      input = gets.strip.to_i
-      finder = RickAndMortyCli::Character.find_by_id(input)
+    input = gets.strip.to_i
+    finder = RickAndMortyCli::Character.find_by_id(input)
 
-        if finder.size >= 1
+        if input < finder.size
           finder.each do |character|
             puts character.details
           end
+        else puts "That character does not exist!"
         end
         restart_options
 
-      end
+  end
 
-      def restart_options
-      puts ""
-      puts "Would you like to find another character?"
-      puts "Return to Main -- enter MAIN"
-      puts "Exit Program -- enter Exit"
+  def restart_options
+    puts ""
+    puts "Would you like to find another character?"
+    puts "Return to Main -- enter MAIN"
+    puts "Exit Program -- enter Exit"
 
-      input = gets.strip.downcase
+    input = gets.strip.downcase
 
       if input.downcase == "main"
         start
@@ -91,8 +92,7 @@ class RickAndMortyCli::Cli
         start
       end
 
-    end
-
+end
 
 
 end
