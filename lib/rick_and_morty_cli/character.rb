@@ -33,7 +33,7 @@ class RickAndMortyCli::Character
   end
 
   def self.find_by_id(id)
-    @@all.find_all do |character|
+    @@all.find do |character|
       character.id == id
     end
   end

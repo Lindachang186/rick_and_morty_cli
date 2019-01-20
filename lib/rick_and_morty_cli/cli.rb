@@ -2,6 +2,7 @@
 class RickAndMortyCli::Cli
 
   def call
+    binding.pry
      RickAndMortyCli::Api.new.get_characters_from_page
      puts "Welcome to the Rick And Morty Character Finder"
      start
@@ -13,6 +14,7 @@ class RickAndMortyCli::Cli
      puts "1. Find character by name -- enter 1"
      puts "2. Find me a random character -- enter 2"
      puts "3. List all character names -- enter 3"
+     puts "4. EXIT PROGRAM"
 
      input = gets.strip.to_i
       if input == 1
@@ -21,7 +23,9 @@ class RickAndMortyCli::Cli
         random_character
       elsif input == 3
         all_characters
-      elsif input > 3
+      elsif input == 4
+        exit
+      elsif input > 4
         puts "Invalid option"
         start
       end
