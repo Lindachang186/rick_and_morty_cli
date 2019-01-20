@@ -2,7 +2,6 @@
 class RickAndMortyCli::Cli
 
   def call
-    binding.pry
      RickAndMortyCli::Api.new.get_characters_from_page
      puts "Welcome to the Rick And Morty Character Finder"
      start
@@ -25,7 +24,7 @@ class RickAndMortyCli::Cli
         all_characters
       elsif input == 4
         exit
-      elsif input > 4
+      else
         puts "Invalid option"
         start
       end
@@ -66,16 +65,14 @@ class RickAndMortyCli::Cli
     puts "Enter their number to learn more -- enter character #"
 
     input = gets.strip.to_i
-    finder = RickAndMortyCli::Character.find_by_id(input)
+    found_character = RickAndMortyCli::Character.find_by_id(input)
 
-        if input < RickAndMortyCli::Character.all.size
-          finder.each do |character|
-            puts character.details
-          end
-        else puts "That character does not exist!"
-        end
-        restart_options
-
+    if found_character
+      puts found_character.details
+    else
+      puts "That character does not exist!"
+    end
+    restart_options
   end
 
   def restart_options
